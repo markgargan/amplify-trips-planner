@@ -1,19 +1,15 @@
-import 'package:amplify_trips_planner/features/activity/ui/activities_list/activities_list.dart';
-import 'package:amplify_trips_planner/features/trip/controller/trip_controller.dart';
-import 'package:amplify_trips_planner/features/trip/ui/trip_page/selected_trip_card.dart';
+import 'package:amplify_trips_planner/features/trip/ui/past_trip_page/selected_past_trip_card.dart';
 import 'package:amplify_trips_planner/models/ModelProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class TripDetails extends ConsumerWidget {
-  const TripDetails({
+class PastTripDetails extends ConsumerWidget {
+  const PastTripDetails({
     required this.trip,
-    required this.tripId,
     super.key,
   });
 
   final AsyncValue<Trip> trip;
-  final String tripId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +21,7 @@ class TripDetails extends ConsumerWidget {
             const SizedBox(
               height: 8,
             ),
-            SelectedTripCard(trip: value),
+            SelectedPastTripCard(trip: value),
             const SizedBox(
               height: 20,
             ),
@@ -46,27 +42,12 @@ class TripDetails extends ConsumerWidget {
             const SizedBox(
               height: 8,
             ),
-            Expanded(
-              child: ActivitiesList(
-                trip: value,
-              ),
-            )
           ],
         );
 
       case AsyncError():
-        return Center(
-          child: Column(
-            children: [
-              const Text('Error'),
-              TextButton(
-                onPressed: () async {
-                  ref.invalidate(tripControllerProvider(tripId));
-                },
-                child: const Text('Try again'),
-              ),
-            ],
-          ),
+        return const Center(
+          child: Text('Error'),
         );
       case AsyncLoading():
         return const Center(

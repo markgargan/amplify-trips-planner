@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'trip_controller.dart';
+part of 'activities_list_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$tripControllerHash() => r'8fb30b509733af5cdf8e04d4a29b7397e5fa229a';
+String _$activitiesListControllerHash() =>
+    r'ae038e7c35dc7c13d1a90149735954d55c085436';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,36 +30,37 @@ class _SystemHash {
   }
 }
 
-abstract class _$TripController
-    extends BuildlessAutoDisposeAsyncNotifier<Trip> {
+abstract class _$ActivitiesListController
+    extends BuildlessAutoDisposeAsyncNotifier<List<Activity>> {
   late final String tripId;
 
-  FutureOr<Trip> build(
+  FutureOr<List<Activity>> build(
     String tripId,
   );
 }
 
-/// See also [TripController].
-@ProviderFor(TripController)
-const tripControllerProvider = TripControllerFamily();
+/// See also [ActivitiesListController].
+@ProviderFor(ActivitiesListController)
+const activitiesListControllerProvider = ActivitiesListControllerFamily();
 
-/// See also [TripController].
-class TripControllerFamily extends Family<AsyncValue<Trip>> {
-  /// See also [TripController].
-  const TripControllerFamily();
+/// See also [ActivitiesListController].
+class ActivitiesListControllerFamily
+    extends Family<AsyncValue<List<Activity>>> {
+  /// See also [ActivitiesListController].
+  const ActivitiesListControllerFamily();
 
-  /// See also [TripController].
-  TripControllerProvider call(
+  /// See also [ActivitiesListController].
+  ActivitiesListControllerProvider call(
     String tripId,
   ) {
-    return TripControllerProvider(
+    return ActivitiesListControllerProvider(
       tripId,
     );
   }
 
   @override
-  TripControllerProvider getProviderOverride(
-    covariant TripControllerProvider provider,
+  ActivitiesListControllerProvider getProviderOverride(
+    covariant ActivitiesListControllerProvider provider,
   ) {
     return call(
       provider.tripId,
@@ -77,33 +79,34 @@ class TripControllerFamily extends Family<AsyncValue<Trip>> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'tripControllerProvider';
+  String? get name => r'activitiesListControllerProvider';
 }
 
-/// See also [TripController].
-class TripControllerProvider
-    extends AutoDisposeAsyncNotifierProviderImpl<TripController, Trip> {
-  /// See also [TripController].
-  TripControllerProvider(
+/// See also [ActivitiesListController].
+class ActivitiesListControllerProvider
+    extends AutoDisposeAsyncNotifierProviderImpl<ActivitiesListController,
+        List<Activity>> {
+  /// See also [ActivitiesListController].
+  ActivitiesListControllerProvider(
     this.tripId,
   ) : super.internal(
-          () => TripController()..tripId = tripId,
-          from: tripControllerProvider,
-          name: r'tripControllerProvider',
+          () => ActivitiesListController()..tripId = tripId,
+          from: activitiesListControllerProvider,
+          name: r'activitiesListControllerProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$tripControllerHash,
-          dependencies: TripControllerFamily._dependencies,
+                  : _$activitiesListControllerHash,
+          dependencies: ActivitiesListControllerFamily._dependencies,
           allTransitiveDependencies:
-              TripControllerFamily._allTransitiveDependencies,
+              ActivitiesListControllerFamily._allTransitiveDependencies,
         );
 
   final String tripId;
 
   @override
   bool operator ==(Object other) {
-    return other is TripControllerProvider && other.tripId == tripId;
+    return other is ActivitiesListControllerProvider && other.tripId == tripId;
   }
 
   @override
@@ -115,8 +118,8 @@ class TripControllerProvider
   }
 
   @override
-  FutureOr<Trip> runNotifierBuild(
-    covariant TripController notifier,
+  FutureOr<List<Activity>> runNotifierBuild(
+    covariant ActivitiesListController notifier,
   ) {
     return notifier.build(
       tripId,
